@@ -1,0 +1,484 @@
+[
+  {
+    "screenId": "49d280d45cce41afa3f09fa54d5e8238",
+    "screenTitle": "Hata Durumu",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 98
+      },
+      {
+        "type": "button",
+        "label": "remove\nAzalt",
+        "line": 125
+      },
+      {
+        "type": "button",
+        "label": "add\nArtır",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "restart_alt\nSıfırla",
+        "line": 134
+      },
+      {
+        "type": "button",
+        "label": "counter_4\nSayaç",
+        "line": 146
+      },
+      {
+        "type": "button",
+        "label": "history\nGeçmiş",
+        "line": 151
+      },
+      {
+        "type": "button",
+        "label": "settings\nAyarlar",
+        "line": 156
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 99
+      },
+      {
+        "type": "button",
+        "label": "[icon: cloud_off]",
+        "line": 113
+      },
+      {
+        "type": "button",
+        "label": "[icon: remove]",
+        "line": 126
+      },
+      {
+        "type": "button",
+        "label": "[icon: add]",
+        "line": 130
+      },
+      {
+        "type": "button",
+        "label": "[icon: restart_alt]",
+        "line": 135
+      },
+      {
+        "type": "button",
+        "label": "[icon: counter_4]",
+        "line": 147
+      },
+      {
+        "type": "button",
+        "label": "[icon: history]",
+        "line": 152
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 157
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 98
+      },
+      {
+        "type": "button",
+        "label": "remove\nAzalt",
+        "line": 125
+      },
+      {
+        "type": "button",
+        "label": "add\nArtır",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "restart_alt\nSıfırla",
+        "line": 134
+      },
+      {
+        "type": "button",
+        "label": "counter_4\nSayaç",
+        "line": 146
+      },
+      {
+        "type": "button",
+        "label": "history\nGeçmiş",
+        "line": 151
+      },
+      {
+        "type": "button",
+        "label": "settings\nAyarlar",
+        "line": 156
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 99
+      },
+      {
+        "type": "button",
+        "label": "[icon: cloud_off]",
+        "line": 113
+      },
+      {
+        "type": "button",
+        "label": "[icon: remove]",
+        "line": 126
+      },
+      {
+        "type": "button",
+        "label": "[icon: add]",
+        "line": 130
+      },
+      {
+        "type": "button",
+        "label": "[icon: restart_alt]",
+        "line": 135
+      },
+      {
+        "type": "button",
+        "label": "[icon: counter_4]",
+        "line": 147
+      },
+      {
+        "type": "button",
+        "label": "[icon: history]",
+        "line": 152
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 157
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 15,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "2bf183d95a0b487ba25617753e0cb99b",
+    "screenTitle": "Ana Sayfa",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 92
+      },
+      {
+        "type": "button",
+        "label": "add\n                    ARTIR",
+        "line": 110
+      },
+      {
+        "type": "button",
+        "label": "remove\n                    AZALT",
+        "line": 115
+      },
+      {
+        "type": "button",
+        "label": "refresh\n                    SIFIRLA",
+        "line": 120
+      },
+      {
+        "type": "button",
+        "label": "counter_4\nSayaç",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "history\nGeçmiş",
+        "line": 133
+      },
+      {
+        "type": "button",
+        "label": "settings\nAyarlar",
+        "line": 137
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 93
+      },
+      {
+        "type": "button",
+        "label": "[icon: add]",
+        "line": 111
+      },
+      {
+        "type": "button",
+        "label": "[icon: remove]",
+        "line": 116
+      },
+      {
+        "type": "button",
+        "label": "[icon: refresh]",
+        "line": 121
+      },
+      {
+        "type": "button",
+        "label": "[icon: counter_4]",
+        "line": 130
+      },
+      {
+        "type": "button",
+        "label": "[icon: history]",
+        "line": 134
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 138
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 92
+      },
+      {
+        "type": "button",
+        "label": "add\n                    ARTIR",
+        "line": 110
+      },
+      {
+        "type": "button",
+        "label": "remove\n                    AZALT",
+        "line": 115
+      },
+      {
+        "type": "button",
+        "label": "refresh\n                    SIFIRLA",
+        "line": 120
+      },
+      {
+        "type": "button",
+        "label": "counter_4\nSayaç",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "history\nGeçmiş",
+        "line": 133
+      },
+      {
+        "type": "button",
+        "label": "settings\nAyarlar",
+        "line": 137
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 93
+      },
+      {
+        "type": "button",
+        "label": "[icon: add]",
+        "line": 111
+      },
+      {
+        "type": "button",
+        "label": "[icon: remove]",
+        "line": 116
+      },
+      {
+        "type": "button",
+        "label": "[icon: refresh]",
+        "line": 121
+      },
+      {
+        "type": "button",
+        "label": "[icon: counter_4]",
+        "line": 130
+      },
+      {
+        "type": "button",
+        "label": "[icon: history]",
+        "line": 134
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 138
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 14,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "bdf69529c193430a88f08d40af587815",
+    "screenTitle": "Boş Durum",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "counter_4\nSayaç",
+        "href": "#",
+        "line": 135
+      },
+      {
+        "type": "link",
+        "label": "history\nGeçmiş",
+        "href": "#",
+        "line": 139
+      },
+      {
+        "type": "link",
+        "label": "settings\nAyarlar",
+        "href": "#",
+        "line": 143
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 97
+      },
+      {
+        "type": "button",
+        "label": "remove",
+        "line": 116
+      },
+      {
+        "type": "button",
+        "label": "add",
+        "line": 119
+      },
+      {
+        "type": "button",
+        "label": "refresh",
+        "line": 122
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 98
+      },
+      {
+        "type": "button",
+        "label": "[icon: remove]",
+        "line": 117
+      },
+      {
+        "type": "button",
+        "label": "[icon: add]",
+        "line": 120
+      },
+      {
+        "type": "button",
+        "label": "[icon: refresh]",
+        "line": 123
+      },
+      {
+        "type": "button",
+        "label": "[icon: counter_4]",
+        "line": 136
+      },
+      {
+        "type": "button",
+        "label": "[icon: history]",
+        "line": 140
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 144
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "counter_4\nSayaç",
+        "href": "#",
+        "line": 135
+      },
+      {
+        "type": "link",
+        "label": "history\nGeçmiş",
+        "href": "#",
+        "line": 139
+      },
+      {
+        "type": "link",
+        "label": "settings\nAyarlar",
+        "href": "#",
+        "line": 143
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 97
+      },
+      {
+        "type": "button",
+        "label": "remove",
+        "line": 116
+      },
+      {
+        "type": "button",
+        "label": "add",
+        "line": 119
+      },
+      {
+        "type": "button",
+        "label": "refresh",
+        "line": 122
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 98
+      },
+      {
+        "type": "button",
+        "label": "[icon: remove]",
+        "line": 117
+      },
+      {
+        "type": "button",
+        "label": "[icon: add]",
+        "line": 120
+      },
+      {
+        "type": "button",
+        "label": "[icon: refresh]",
+        "line": 123
+      },
+      {
+        "type": "button",
+        "label": "[icon: counter_4]",
+        "line": 136
+      },
+      {
+        "type": "button",
+        "label": "[icon: history]",
+        "line": 140
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 144
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 14,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
