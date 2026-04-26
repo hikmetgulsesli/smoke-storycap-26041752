@@ -1,0 +1,181 @@
+# Ürün Gereksinimleri Dokümanı (PRD)
+
+## 1. Genel Bakış
+
+Smoke-storycap-26041752, kullanıcıların temel sayaç işlemlerini (arttır, azalt, sıfırla) gerçekleştirebileceği ve sayaç değerini tarayıcıda localStorage üzerinde kalıcı olarak saklayabileceği minimal bir React web uygulamasıdır. Bu proje, Vite ile kurulan React 18 + TypeScript tech stack'inin smoke testini gerçekleştirmek amacıyla tasarlanmıştır. Uygulama tamamen Türkçe arayüze sahiptir ve her yaş grubundan kullanıcı tarafından kolayca kullanılabilir. Tek sayfa üzerinde tüm işlevsellik sunulur; herhangi bir routing gereksinimi yoktur.
+
+## 2. Hedefler
+
+1. Kullanıcı mevcut sayaç değerini net biçimde görebilmeli ve sayısal olarak okunabilir formatta sunulmalıdır.
+2. Kullanıcı sayaç değerini "Arttır" butonu ile +1 arttırabilmeli, "Azalt" butonu ile -1 azaltabilmeli, "Sıfırla" butonu ile 0'a döndürebilmelidir.
+3. Sayaç değeri her değişiklikte otomatik olarak localStorage'a kaydedilmeli ve sayfa yenilendikten sonra en son değer geri yüklenmelidir.
+4. Uygulama ilk yüklemede hızlı olmalı (Vite cold start < 3 saniye) ve tüm temel test/smoke test adımlarını tek story'de tamamlamalıdır.
+5. Butonlar ve sayaç değeri, klavye ile (Tab, Enter, Space) erişilebilir olmalı ve ARIA live region ile ekran okuyucu desteği sağlanmalıdır.
+6. Uygulama mobil cihazlarda (320px+) uyumlu olmalı, responsive tasarıma sahip olmalıdır.
+
+## 3. Tech Stack Detayı
+
+- **Framework:** React 18.3.x (functional components, hooks)
+- **Build Tool:** Vite 5.x (HMR, fast refresh, ESM-based dev server)
+- **Language:** TypeScript 5.x (strict mode)
+- **Styling:** CSS Modules veya inline styles (karışıklığı önlemek için minimal bağımlılık)
+- **State Management:** useState + useEffect (built-in React hooks, dış bağımlılık yok)
+- **Storage:** window.localStorage (tarayıcı yerel depolama API'si)
+- **Routing:** Yok (tek sayfa uygulama, SPA)
+- **Testing:** Vitest + React Testing Library (Vite ile entegre)
+- **Bundler output:** SPA static files — basit bir HTTP sunucusu ile servis edilebilir
+
+## 4. Fonksiyonel Gereksinimler
+
+### 4.1 Sayaç Görüntüleme
+
+- Sayacın mevcut sayısal değeri (tamsayı, negatif değerler dahil) ekranın merkezinde büyük font ile gösterilir.
+- Başlangıç değeri: localStorage'da "counter" key'i bulunamazsa varsayılan olarak 0'dır.
+- Değer değiştiğinde DOM güncellenir; herhangi bir animasyon veya geçiş efekti uygulanmaz.
+
+### 4.2 Arttır Butonu
+
+- "+" veya "Arttır" metinli buton, sayaç değerini birer birer arttırır.
+- Her tıklama: sayaç değeri +1, sonra localStorage'a kaydedilir.
+- Hata mesajı yok (sayaç negatif değerleri de kabul eder, üst sınır yok).
+- ARIA label: "Sayaç değerini bir arttır".
+
+### 4.3 Azalt Butonu
+
+- "-" veya "Azalt" metinli buton, sayaç değerini birer birer azaltır.
+- Her tıklama: sayaç değeri -1, sonra localStorage'a kaydedilir.
+- Negatif değerlere izin verilir.
+- ARIA label: "Sayaç değerini bir azalt".
+
+### 4.4 Sıfırla Butonu
+
+- "Sıfırla" metinli buton, sayaç değerini 0'a resetler.
+- Tıklandığında sayaç 0 olur ve localStorage "counter" key'i silinmez, değeri 0 olarak güncellenir.
+- ARIA label: "Sayaç değerini sıfırla".
+- Onay gerektirmez (smoke test odaklı, hızlı kullanım).
+
+### 4.5 localStorage Entegrasyonu
+
+- Key: "counter" (sabit string)
+- Value: JSON.stringify(integer) — örn: "5", "-3", "0"
+- Sayfa yüklendiğinde (component mount) değer okunur ve useState ile başlatılır.
+- Her state değişikliğinde (arttır/azalt/sıfırla) useEffect ile localStorage güncellenir.
+- localStorage erişim hatası (SSR veya private mod) durumunda sessizce devam eder; uygulama çalışmaya devam eder (değer bellekte saklanır, kalıcılık kaybedilir).
+
+## 5. Veri Modeli
+
+### Entity: Counter
+
+| Alan | Tip | Açıklama |
+|------|-----|----------|
+| value | number | Tamsayı, negatif değerler dahil, varsayılan 0 |
+
+### localStorage Schema
+
+```
+Key: "counter"
+Value (string): "-3", "0", "42" gibi JSON stringifiye edilmiş tamsayı
+```
+
+## 6. UI/UX Gereksinimler
+
+### 6.1 Design System Seçimi
+
+- **Aesthetic:** Minimal — sade, süssüz, yüksek okunabilirlik odaklı
+- **Renk Paleti:**
+  - Primary: #2563EB (mavi — butonlar, vurgular)
+  - Primary Hover: #1D4ED8
+  - Background: #F8FAFC (açık gri-beyaz)
+  - Surface: #FFFFFF (kart/zemin)
+  - Text: #0F172A (koyu lacivert)
+  - Text Secondary: #64748B (gri)
+  - Border: #E2E8F0
+  - Success (sıfırla aktif): #10B981
+  - Error (opsiyonel): #EF4444
+  - Warning: #F59E0B
+
+- **Tipografi:**
+  - Heading: Inter (Google Fonts) — 700 weight
+  - Body: Inter — 400/500 weight
+  - Counter Display: Inter — 800 weight, 48px–96px responsive
+
+- **Icon Library:** Lucide React (Arttır: Plus, Azalt: Minus, Sıfırla: RotateCcw)
+
+### 6.2 Spacing & Components
+
+- Spacing scale: 4 / 8 / 16 / 24 / 32 / 48 / 64 px
+- Border radius: 8px (butonlar), 12px (kart), 16px (container)
+- Shadow: none (minimal aesthetic)
+- Buton pattern:
+  - Minimum touch target: 44x44 px
+  - Padding: 12px 24px
+  - Font: 16px, semibold
+  - Rounded corners: 8px
+- Counter display:
+  - Centered, large font
+  - Min width: 120px (negatif sayılar için)
+
+## 7. Non-Functional Requirements
+
+### 7.1 Performans
+
+- Vite cold start: < 3 saniye (dev server)
+- Production build: < 1 saniye
+- Bundle size: < 100KB gzipped (React + app code)
+- Lighthouse performans skoru: >= 95
+
+### 7.2 Erişilebilirlik (WCAG 2.1 AA)
+
+- Klavye navigasyonu: Tab ile tüm butonlara erişilebilir
+- Enter ve Space ile buton tetiklenebilir
+- ARIA live region: sayaç değeri değiştiğinde ekran okuyucu bildirimi
+- ARIA labels: her buton için açıklayıcı label
+- Kontrast: tüm metinler 4.5:1 üzerinde
+- Focus state: 2px solid #2563EB outline, 2px offset
+
+### 7.3 Tarayıcı Desteği
+
+- Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+- iOS Safari 14+, Android Chrome 90+
+- Responsive: 320px (mobil) → 1920px (desktop)
+- localStorage desteği zorunlu (yoksa sessiz fallback)
+
+## 8. Proje Yapısı
+
+```
+src/
+├── components/
+│   ├── Counter.tsx          # Sayaç bileşeni
+│   ├── CounterDisplay.tsx   # Sayısal değer gösterimi
+│   └── CounterButtons.tsx   # Arttır/Azalt/Sıfırla butonları
+├── hooks/
+│   └── useCounter.ts        # useState + localStorage hook
+├── utils/
+│   └── storage.ts           # localStorage helper
+├── types/
+│   └── index.ts             # TypeScript tipler
+├── App.tsx
+├── App.css
+├── main.tsx
+└── index.css
+tests/
+├── Counter.test.tsx
+└── useCounter.test.ts
+```
+
+## 9. Window State (testing/dogfood)
+
+```typescript
+window.app = {
+  state: 'idle', // her zaman idle (sync işlem)
+  counter: 0     // mevcut sayac değeri
+}
+```
+
+## 10. Ekranlar
+
+| # | Ekran Adı | Tür | Açıklama |
+|---|-----------|-----|----------|
+| 1 | Ana Sayfa | counter | Tek sayfa, sayaç değeri + 3 buton |
+| 2 | Boş Durum (localStorage yok) | empty-state | İlk yüklemede değer 0 gösterilir, kullanıcı bilgilendirilmez |
+| 3 | Hata Durumu (localStorage erişilemez) | error-state | Sessiz fallback, sayaç bellekte çalışır, kullanıcı bilgilendirilmez |
